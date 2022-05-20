@@ -1,6 +1,8 @@
 name: CI
 
 on:
+  push:
+    branches: [master]
   pull_request:
     branches: [master]
     types: [opened, synchronize]
@@ -8,7 +10,7 @@ on:
 jobs:
   eslint:
     name: Lint code base
-    runs-on: ubuntu-lastest
+    runs-on: ubuntu-18.04
 
     steps:
       - name: Checkout code
